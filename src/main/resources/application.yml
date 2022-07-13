@@ -1,0 +1,16 @@
+server:
+  port: 9876
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/oauth2demo
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.xml
+    url: jdbc:postgresql://127.0.0.1:5432/oauth2demo
+    user: postgres
+    password: postgres
