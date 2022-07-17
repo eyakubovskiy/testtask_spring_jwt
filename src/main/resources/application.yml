@@ -1,16 +1,29 @@
 server:
-  port: 9876
-
+  port: ${SERVER_PORT:9876}
 
 spring:
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/oauth2demo
+    url: ${PG_URL:jdbc:postgresql://127.0.0.1:5432/oauth2demo}
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
+    username: ${PG_USER:postgres}
+    password: ${PG_PASSWORD:postgres}
+  jpa:
+#    show-sql: true
 
   liquibase:
     change-log: classpath:liquibase/changelog-master.xml
+#    Закомментить ниже после написания тестов
     url: jdbc:postgresql://127.0.0.1:5432/oauth2demo
     user: postgres
     password: postgres
+
+jwt:
+  token:
+   secret: ${JWT_TOKEN:bigsecrettesttaskjwttokeneyakubovskiy}
+   expired: ${JWT_EXPIRED:3600000}
+
+
+
+
+
+

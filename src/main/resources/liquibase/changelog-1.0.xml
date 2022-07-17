@@ -19,14 +19,10 @@
         </createTable>
     </changeSet>
 
-
     <changeSet id="1.0.1" author="eyakubovskiy">
         <createTable tableName="messages">
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="user" type="BIGINT">
-                <constraints nullable="false"/>
             </column>
             <column name="message" type="VARCHAR(255)">
                 <constraints nullable="false"/>
@@ -58,11 +54,11 @@
     <changeSet id="1.0.5" author="eyakubovskiy">
         <insert tableName="users">
             <column name="name" value="admin"/>
-            <column name="password" value="admin0"/>
+            <column name="password" value="$2a$12$wS24qePwsvifAPe0/TkgXOGn829vTq1BiCjI4vDMPzc3xy7vdTEKW"/>
         </insert>
         <insert tableName="users">
             <column name="name" value="user"/>
-            <column name="password" value="user0"/>
+            <column name="password" value="$2a$12$vC2GzYoVwo2sD0VlwtGqV.naVFdX9gguhg1f6bLYqtCDbFDm6HnjG"/>
         </insert>
     </changeSet>
 

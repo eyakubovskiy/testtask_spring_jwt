@@ -21,12 +21,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    //@Column(name = "messages")
-    //@OneToMany(mappedBy = "message", fetch = FetchType.LAZY)
     @OneToMany
     @JoinTable(name = "user_messages",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "message_id", referencedColumnName = "id")})
-    //@JoinTable(name = "user_messages", joinColumns = @JoinColumn(name = "message_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<Message> messages;
 }

@@ -11,10 +11,10 @@ import javax.persistence.*;
 @Table(name="messages")
 public class Message {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    //@Column(name = "name")
     @ManyToOne
     @JoinTable(name = "user_messages",
             joinColumns = {@JoinColumn(name = "message_id", referencedColumnName = "id")},
