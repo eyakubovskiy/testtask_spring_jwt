@@ -1,6 +1,5 @@
 package ru.eyakubovskiy.testtask_spring_oauth2.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +8,6 @@ import ru.eyakubovskiy.testtask_spring_oauth2.dto.MessageRequestDto;
 import ru.eyakubovskiy.testtask_spring_oauth2.service.MessageService;
 
 import java.util.List;
-import java.util.Map;
 
 @RequiredArgsConstructor
 @RequestMapping(value = "/api/")
@@ -18,10 +16,10 @@ public class MessageController {
 
     private final MessageService messageService;
 
-    @GetMapping(value = "message")
+    @PostMapping(value = "message")
     public ResponseEntity message(@RequestBody MessageRequestDto messageDto) {
 
-        boolean isHistoryRequest = messageDto.getMessage().startsWith("history ");
+        boolean isHistoryRequest = messageDto.message().startsWith("history ");
         ResponseEntity result = null;
 
 ////////////////Вынести в апп сервис
@@ -29,17 +27,15 @@ public class MessageController {
             if (!isHistoryRequest) {
                 messageService.addMessage(messageDto);
 
-                Map resultBody = Map.of("Status", "ok");
-                result =  ResponseEntity.ok(resultBody);
+                result = ResponseEntity.ok("");
             } else {
-                String messageText = messageDto.getMessage();
+                String messageText = messageDto.message();
                 int indexOfStartCountText = messageText.indexOf(" ") + 1;
-                String countText = messageDto.getMessage().substring(indexOfStartCountText);
+                String countText = messageDto.message().substring(indexOfStartCountText);
                 int count = Integer.parseInt(countText);
                 List<MessageResponseDto> messages = messageService.getLastMessages(count);
 
-                //Map resultBody = Map.of("Status", "ok");
-                result =  ResponseEntity.ok(messages);
+                result = ResponseEntity.ok(messages);
             }
         } catch (Exception e) {
             System.out.println("ERROR!!!" + System.lineSeparator() + e.getMessage() + System.lineSeparator() + e.getStackTrace().toString()  + System.lineSeparator());

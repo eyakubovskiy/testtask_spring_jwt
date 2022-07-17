@@ -1,6 +1,5 @@
 package ru.eyakubovskiy.testtask_spring_oauth2.security;
 
-
 import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Base64;
 import java.util.Date;
 
+
 @Component
 public class JwtTokenProvider {
     @Value("${jwt.token.secret}")
@@ -25,9 +25,6 @@ public class JwtTokenProvider {
 
     @Autowired
     private UserDetailsService userDetailsService;
-
-//    @Autowired
-//    private BCryptPasswordEncoder passwordEncoder;
 
     @PostConstruct
     protected void init() {
@@ -55,7 +52,7 @@ public class JwtTokenProvider {
         return null;
     }
 
-    public boolean validToken(String token) throws JwtAuthenticationException{
+    public boolean validToken(String token) throws JwtAuthenticationException {
         try {
             Jws<Claims> claims = Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
 

@@ -28,15 +28,15 @@ public class MessageServiceImpl implements MessageService {
     @Override
     public void addMessage(MessageRequestDto messageDto) {
 
-        User user = userRepository.findByName(messageDto.getName());
+        User user = userRepository.findByName(messageDto.name());
 
         if (user == null) {
 
-            throw new UsernameNotFoundException("Пользователь \"" + messageDto.getName() + "\" не найден в БД");
+            throw new UsernameNotFoundException("Пользователь \"" + messageDto.name() + "\" не найден в БД");
         }
 
         Message message = new Message();
-        message.setMessage(messageDto.getMessage());
+        message.setMessage(messageDto.message());
         message.setUser(user);
 
         messageRepository.save(message);

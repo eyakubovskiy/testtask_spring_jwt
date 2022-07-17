@@ -1,5 +1,6 @@
 package ru.eyakubovskiy.testtask_spring_oauth2.security;
 
+import lombok.SneakyThrows;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
@@ -19,6 +20,7 @@ public class JwtTokenFilter extends GenericFilterBean {
         this.jwtTokenProvider = jwtTokenProvider;
     }
 
+    @SneakyThrows
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain filterChain)
             throws IOException, ServletException {
@@ -32,7 +34,7 @@ public class JwtTokenFilter extends GenericFilterBean {
                     SecurityContextHolder.getContext().setAuthentication(auth);
                 }
             }
-        } catch (JwtAuthenticationException e) {  ///Попробовать тут от кэтча избавиться! Залепа рассинхрона. Ответ не выдает ошибку.
+        } catch (JwtAuthenticationException e) {
             throw new RuntimeException(e);
         }
         filterChain.doFilter(req, res);

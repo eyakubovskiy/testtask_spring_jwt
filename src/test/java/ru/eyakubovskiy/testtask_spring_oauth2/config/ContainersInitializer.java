@@ -28,7 +28,7 @@ public class ContainersInitializer implements ApplicationContextInitializer<Conf
                 "spring.datasource.url:" + dbContainer.getJdbcUrl(),
                 "spring.datasource.username:" + dbContainer.getUsername(),
                 "spring.datasource.password:" + dbContainer.getPassword(),
-//                "spring.liquibase.enabled:true",
+                "spring.liquibase.enabled:true",
                 "spring.datasource.driver-class-name:org.postgresql.Driver")
                 .applyTo(applicationContext);
     }
