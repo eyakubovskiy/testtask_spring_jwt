@@ -1,6 +1,5 @@
 package ru.eyakubovskiy.testtask_spring_jwt;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,14 +7,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.shaded.com.fasterxml.jackson.databind.ObjectMapper;
-//import ru.eyakubovskiy.testtask_spring_jwt.config.ContainersInitializer;
 import ru.eyakubovskiy.testtask_spring_jwt.dto.MessageRequestDto;
 import ru.eyakubovskiy.testtask_spring_jwt.dto.MessageResponseDto;
 import ru.eyakubovskiy.testtask_spring_jwt.security.JwtTokenProvider;
@@ -29,7 +26,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@ContextConfiguration(initializers = ContainersInitializer.class)
 @Testcontainers
 public class MessageControllerTestIntegration {
 

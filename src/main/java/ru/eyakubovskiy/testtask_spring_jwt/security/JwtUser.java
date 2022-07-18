@@ -9,14 +9,14 @@ public class JwtUser implements UserDetails {
     private final Long id;
     private final String name;
     private final String password;
-    private final Collection<? extends GrantedAuthority> authorities; //выпилить, по умолчанию все разрешены кто смаппился в БД
+    private final Collection<? extends GrantedAuthority> authorities;
 
     public JwtUser(Long id, String name, String password,
                    Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.authorities = authorities; //тоже выпилить
+        this.authorities = authorities;
     }
 
     public Long getId() {

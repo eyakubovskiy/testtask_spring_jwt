@@ -32,7 +32,6 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@ContextConfiguration(initializers = ContainersInitializer.class)
 @Testcontainers
 public class LoginRestControllerTestIntegration {
 

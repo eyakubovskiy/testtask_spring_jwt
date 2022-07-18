@@ -1,20 +1,15 @@
 package ru.eyakubovskiy.testtask_spring_jwt;
 
-import org.junit.Before;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.containers.GenericContainer;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.utility.DockerImageName;
-//import ru.eyakubovskiy.testtask_spring_jwt.config.ContainersInitializer;
 import ru.eyakubovskiy.testtask_spring_jwt.dto.MessageResponseDto;
 import ru.eyakubovskiy.testtask_spring_jwt.model.Message;
 import ru.eyakubovskiy.testtask_spring_jwt.model.User;

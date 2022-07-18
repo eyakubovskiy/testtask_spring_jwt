@@ -12,10 +12,6 @@ spring:
 
   liquibase:
     change-log: classpath:liquibase/changelog-master.xml
-#    Закомментить ниже после написания тестов
-#    url: jdbc:postgresql://127.0.0.1:5432/jwtdemo
-#    user: postgres
-#    password: postgres
 
 jwt:
   token:

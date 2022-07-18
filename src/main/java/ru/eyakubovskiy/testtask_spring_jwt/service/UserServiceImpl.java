@@ -7,7 +7,6 @@ import ru.eyakubovskiy.testtask_spring_jwt.repository.UserRepository;
 
 @RequiredArgsConstructor
 
-//@Service
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
