@@ -50,11 +50,17 @@ Spring Boot, Spring Web, Spring Data, Spring Security, JWT, Liquibase, JUnit 5, 
 ### База данных
 В качестве БД выбрана PostgreSQL 14.4.
 Доступ к БД по умолчанию осуществляется со следующим настройками:
+
 Server: localhost
+
 Port: 5432
+
 Schema: jwtdemo
+
 login: postgres
+
 password: postgres
+
 
 ### Тесты
 Для тестов связанных с БД используется testcontainers, поэтому для проведения тестов требуется запущенный сервис Docker.
