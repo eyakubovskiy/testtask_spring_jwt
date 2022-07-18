@@ -1,0 +1,22 @@
+Запрос для получения токена
+curl -X POST http://localhost:9876/api/login -H "Content-Type:application/json" -d "{\"name\":\"user\", \"password\":\"user\"}"
+
+Запросы добавляющие сообщения в таблицу сообщений
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message1\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message2\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message3\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message4\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message5\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message6\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message7\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"admin\", \"message\":\"message8\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message9\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"admin\", \"message\":\"message10\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message11\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"admin\", \"message\":\"message12\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message13\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"admin\", \"message\":\"message14\"}"
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"message15\"}"
+
+Запрос получения 10 последних сообщений. Количество можно вводить произвольное в ограничениях int
+curl -X GET http://localhost:9876/api/message -H "Authorization: Bearer_TOKEN" -H "Content-Type:application/json" -d "{\"name\":\"user\", \"message\":\"history 10\"}"

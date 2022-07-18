@@ -3,19 +3,19 @@ server:
 
 spring:
   datasource:
-    url: ${PG_URL:jdbc:postgresql://127.0.0.1:5432/oauth2demo}
+    url: ${PG_URL:jdbc:postgresql://127.0.0.1:5432/jwtdemo}
     driver-class-name: org.postgresql.Driver
     username: ${PG_USER:postgres}
     password: ${PG_PASSWORD:postgres}
   jpa:
-#    show-sql: true
+    show-sql: true
 
   liquibase:
     change-log: classpath:liquibase/changelog-master.xml
 #    Закомментить ниже после написания тестов
-    url: jdbc:postgresql://127.0.0.1:5432/oauth2demo
-    user: postgres
-    password: postgres
+#    url: jdbc:postgresql://127.0.0.1:5432/jwtdemo
+#    user: postgres
+#    password: postgres
 
 jwt:
   token:

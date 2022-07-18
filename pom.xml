@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-<!--		<version>2.7.1</version>-->
-		<version>2.5.9</version>
+		<version>2.7.1</version>
+<!--		<version>2.5.9</version>-->
 		<relativePath/>
 	</parent>
 	<groupId>ru.eyakubovskiy</groupId>
-	<artifactId>testtask_spring_oauth2</artifactId>
+	<artifactId>testtask_spring_jwt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>TestTask_Spring_OAuth2</name>
+	<name>TestTask_Spring_JWT</name>
 	<description>Test task. Spring, Spring Web, Spring Data, Spring Security, JWT</description>
 	<properties>
 		<java.version>17</java.version>
@@ -95,6 +95,12 @@
 			<version>1.17.3</version>
 			<scope>test</scope>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter</artifactId>-->
+<!--			<version>3.1.13</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
