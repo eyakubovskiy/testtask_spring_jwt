@@ -92,7 +92,7 @@ public class LoginRestControllerTestIntegration {
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<String> httpEntity = new HttpEntity<>(request,httpHeaders);
+        HttpEntity<String> httpEntity = new HttpEntity<>(request, httpHeaders);
         ResponseEntity<String> response = testRestTemplate.exchange(uri, HttpMethod.POST, httpEntity, String.class);
 
         assertEquals(response.getStatusCode(), HttpStatus.OK);
@@ -117,11 +117,9 @@ public class LoginRestControllerTestIntegration {
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<String> httpEntity = new HttpEntity<>(request,httpHeaders);
+        HttpEntity<String> httpEntity = new HttpEntity<>(request, httpHeaders);
         ResponseEntity<String> response = testRestTemplate.exchange(uri, HttpMethod.POST, httpEntity, String.class);
 
         assertEquals(response.getStatusCode(), HttpStatus.FORBIDDEN);
     }
-
-
 }

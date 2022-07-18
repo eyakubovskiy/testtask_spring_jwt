@@ -99,8 +99,7 @@ public class UserServiceTestIntegration {
 
     private void deleteAllNotLiquibaseCreatedUsers() {
         List<User> users = userRepository.findAll();
-        for (User user:
-                users) {
+        for (User user : users) {
             Long id = user.getId();
             if (id != 1L && id != 2L) {
                 userRepository.deleteById(id);
