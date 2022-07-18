@@ -22,7 +22,6 @@ public class MessageController {
         boolean isHistoryRequest = messageDto.message().startsWith("history ");
         ResponseEntity result = null;
 
-////////////////Вынести в апп сервис
         try {
             if (!isHistoryRequest) {
                 messageService.addMessage(messageDto);
@@ -38,9 +37,7 @@ public class MessageController {
                 result = ResponseEntity.ok(messages);
             }
         } catch (Exception e) {
-            System.out.println("ERROR!!!" + System.lineSeparator() + e.getMessage() + System.lineSeparator() + e.getStackTrace().toString()  + System.lineSeparator());
             e.printStackTrace(System.out);
-            System.out.println("END ERROR");
         }
         return result;
     }

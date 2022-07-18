@@ -4,9 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import ru.eyakubovskiy.testtask_spring_jwt.model.Message;
 
-//public record MessageDto(String name, String message) {
-//
-//}
 @Setter
 @Getter
 public class MessageResponseDto {
@@ -21,7 +18,6 @@ public class MessageResponseDto {
     }
 
     public static MessageResponseDto fromMessage(Message message) {
-        System.out.println("User is null - " + message.getUser() == null);
         MessageResponseDto messageResponseDto = new MessageResponseDto(message.getId(),
                 message.getUser().getName(),
                 message.getMessage());
