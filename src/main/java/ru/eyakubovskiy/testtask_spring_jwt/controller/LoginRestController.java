@@ -42,6 +42,4 @@ public class LoginRestController {
 
             return ResponseEntity.ok(result);
     }
-
-
 }

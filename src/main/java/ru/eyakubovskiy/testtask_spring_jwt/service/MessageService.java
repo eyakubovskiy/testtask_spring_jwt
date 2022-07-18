@@ -8,6 +8,7 @@ import java.util.List;
 public interface MessageService {
 
     List<MessageResponseDto> getLastMessages(int countMessages);
+
     void addMessage(MessageRequestDto message);
 
 }

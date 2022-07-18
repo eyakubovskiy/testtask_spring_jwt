@@ -5,7 +5,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
-
 public class JwtUser implements UserDetails {
     private final Long id;
     private final String name;
@@ -62,6 +61,4 @@ public class JwtUser implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-
 }
